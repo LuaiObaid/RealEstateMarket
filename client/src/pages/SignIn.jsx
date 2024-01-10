@@ -7,8 +7,7 @@ export default function SignIn() {
   const [formData, setFormData] = useState({})
   const userData = useSelector((state) => state.user); // State returned is an object
 
-  const loading = userData.loading;
-  const error = userData.error;
+  const { loading, error } = useSelector((state) => state.user);
   
   const dispatch = useDispatch();
   const navigate = useNavigate()
