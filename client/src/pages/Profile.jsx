@@ -1,4 +1,4 @@
-import { current } from "@reduxjs/toolkit";
+import {Link} from 'react-router-dom'
 import { useSelector } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 import { updateUserStart, updateUserSuccess, updateUserFailure, deleteUserFailure, deleteUserStart, deleteUserSuccess, signOutUserStart, signOutUserSuccess, signOutUserFailure } from "../redux/user/userSlice.js";
@@ -152,6 +152,7 @@ export default function Profile() {
         />
         <button disabled={loading} className="bg-slate-700 text-white rounded-lg
         p-3 uppercase hover:opacity-95 disabled:opacity-80" onClick={handleSubmit}>{loading? '...loading':'Update'}</button>
+        <Link to={"/create-listing"} className="bg-green-700 mg-5 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80 text-center"> create listing</Link>
       </form>
       <div className="flex justify-between mt-5">
         <span className="text-red-700 cursor-pointer" onClick={handleDeleteUser}>Delete Account</span>
